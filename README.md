@@ -6,6 +6,7 @@ Remapping of keys should work after reboot.
 
 Purpose is remap right CMD with right OPT to align Windows and Mac key bindings for polish characters. You can modify it as you like though :) 
 
+This is extreemly usefull when Logitech Flow is enabled. See https://github.com/pqrs-org/Karabiner-Elements/issues/3107
 
 ## Explanation
 

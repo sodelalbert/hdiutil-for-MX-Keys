@@ -7,8 +7,9 @@ Remapping of keys should work after reboot.
 Purpose is remap right CMD with right OPT to align Windows and Mac key bindings for polish characters. You can modify it as you like though :) 
 
 
-##Explanation
+## Explanation
 
+Very good blog post explaining all the details
 
 https://rakhesh.com/mac/using-hidutil-to-map-macos-keyboard-keys/
 
@@ -24,8 +25,12 @@ git clone https://github.com/sodelalbert/hdiutil-for-MX-Keys.git
 Copy local.hidutilKeyMapping.plist file to LaunchAgents directory. If not existant create one
 
 ```
-cp local.hidutilKeyMapping.plist ~/Library/LaunchAgents/
+cd cd hdiutil-for-MX-Keys; cp local.hidutilKeyMapping.plist ~/Library/LaunchAgents/
 ```
+
+You need to find product ID of MX Keys from Mac System Report
+
+<img width="879" alt="Zrzut ekranu 2022-11-21 o 19 56 30" src="https://user-images.githubusercontent.com/1679514/203136999-95fcac9c-e8a9-425e-9ca4-31405eb8eb2e.png">
 
 ## Setup launchctl
 

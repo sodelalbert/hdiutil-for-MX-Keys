@@ -23,11 +23,6 @@ Clone repository
 ```
 git clone https://github.com/sodelalbert/hdiutil-for-MX-Keys.git
 ```
-Copy local.hidutilKeyMapping.plist file to LaunchAgents directory. If not existant create one
-
-```
-cd cd hdiutil-for-MX-Keys; cp local.hidutilKeyMapping.plist ~/Library/LaunchAgents/
-```
 
 You need to find product ID of MX Keys from Mac System Report
 
@@ -38,6 +33,13 @@ Paste it to line #14 of local.hidutilKeyMapping.plist
 ```
 "ProductID": 0xB35B
 ```
+
+Copy local.hidutilKeyMapping.plist file to LaunchAgents directory. If not existant create one
+
+```
+cd hdiutil-for-MX-Keys; cp local.hidutilKeyMapping.plist ~/Library/LaunchAgents/
+```
+
 
 ## Setup launchctl
 

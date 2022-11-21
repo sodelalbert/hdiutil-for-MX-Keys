@@ -33,11 +33,11 @@ You need to find product ID of MX Keys from Mac System Report
 
 <img width="879" alt="Zrzut ekranu 2022-11-21 o 19 56 30" src="https://user-images.githubusercontent.com/1679514/203136999-95fcac9c-e8a9-425e-9ca4-31405eb8eb2e.png">
 
-Paset it to line #14 of local.hidutilKeyMapping.plist
+Paste it to line #14 of local.hidutilKeyMapping.plist
 
-'''
+```
 "ProductID": 0xB35B
-'''
+```
 
 ## Setup launchctl
 

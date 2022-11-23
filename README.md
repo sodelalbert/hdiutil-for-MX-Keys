@@ -55,3 +55,12 @@ launchctl start local.hidutilKeyMapping
 
 Reboot proof solution is done.
 
+
+# Alternative launching option
+
+Launchctl seems to be changing from release to release of MacOS and it stopped working for ventura. 
+
+https://stackoverflow.com/questions/6442364/running-script-upon-login-in-mac-os-x
+
+
+

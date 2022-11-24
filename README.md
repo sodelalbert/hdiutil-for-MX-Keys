@@ -63,4 +63,37 @@ Launchctl seems to be changing from release to release of MacOS and it stopped w
 https://stackoverflow.com/questions/6442364/running-script-upon-login-in-mac-os-x
 
 
+# Remap of END HOME keys for MX Master
+
+
+```
+cd ~/Library; mkdir KeyBindings; cd KeyBindings; vi DefaultKeyBinding.dict
+```
+
+Copy and paste following content
+```
+$ cd ~/Library
+$ mkdir KeyBindings
+$ cd KeyBindings
+$ vi DefaultKeyBinding.dict
+
+```
+
+Copy and paste following configuration
+
+```
+{
+/* Remap Home / End keys to be correct */
+"\UF729" = "moveToBeginningOfLine:"; /* Home */
+"\UF72B" = "moveToEndOfLine:"; /* End */
+"$\UF729" = "moveToBeginningOfLineAndModifySelection:"; /* Shift + Home */
+"$\UF72B" = "moveToEndOfLineAndModifySelection:"; /* Shift + End */
+"^\UF729" = "moveToBeginningOfDocument:"; /* Ctrl + Home */
+"^\UF72B" = "moveToEndOfDocument:"; /* Ctrl + End */
+"$^\UF729" = "moveToBeginningOfDocumentAndModifySelection:"; /* Shift + Ctrl + Home */
+"$^\UF72B" = "moveToEndOfDocumentAndModifySelection:"; /* Shift + Ctrl + End */
+}
+```
+
+
 

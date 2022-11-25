@@ -37,21 +37,23 @@ Go to hdiutil-for-MX-Keys and paste Product ID line #14 of local.hidutilKeyMappi
 Copy local.hidutilKeyMapping.plist file to LaunchAgents directory. If not existant create one
 
 ```
-cp local.hidutilKeyMapping.plist ~/Library/LaunchAgents/
+vim ~/Library/LaunchAgents/local.hidutilKeyMapping.plist
 ```
+
+Paste sample file content from this repository and edit ProductID. Save, quit.
+
+Permissions:
+-rw-r--r--@ 1 [your_uesername]  staff   994B 25 lis 15:29 local.hidutilKeyMapping.plist
+
 
 
 ## Setup launchctl
 
-Add service to launchctl
+Add service to launchctl and start it 
 ```
-launchctl load ~/Library/LaunchAgents/local.hidutilKeyMapping.plist
+launchctl load ~/Library/LaunchAgents/local.hidutilKeyMapping.plist; launchctl start local.hidutilKeyMapping
 ```
 
-Start service
-```
-launchctl start local.hidutilKeyMapping
-```
 
 Reboot proof solution is done.
 

@@ -8,80 +8,46 @@ Purpose is remap right CMD with right OPT to align Windows and Mac key bindings 
 
 This is extreemly usefull when Logitech Flow is enabled. See https://github.com/pqrs-org/Karabiner-Elements/issues/3107
 
-## Explanation
 
-Very good blog post explaining all the details
-
-https://rakhesh.com/mac/using-hidutil-to-map-macos-keyboard-keys/
+## Installation steps
 
 
 
-## Preconditions
+* You need to find product ID of MX Keys from Mac System Report 
 
-Clone repository
-
-```
-git clone https://github.com/sodelalbert/hdiutil-for-MX-Keys.git
-```
-
-You need to find product ID of MX Keys from Mac System Report
-
-<img width="879" alt="Zrzut ekranu 2022-11-21 o 19 56 30" src="https://user-images.githubusercontent.com/1679514/203136999-95fcac9c-e8a9-425e-9ca4-31405eb8eb2e.png">
-
-Go to hdiutil-for-MX-Keys and paste Product ID line #14 of local.hidutilKeyMapping.plist
-
-```
-"ProductID": 0xB35B
-```
-
-Copy local.hidutilKeyMapping.plist file to LaunchAgents directory. If not existant create one
-
-```
-vim ~/Library/LaunchAgents/local.hidutilKeyMapping.plist
-```
-
-Paste sample file content from this repository and edit ProductID. Save, quit.
-
-Permissions:
--rw-r--r--@ 1 [your_uesername]  staff   994B 25 lis 15:29 local.hidutilKeyMapping.plist
+    ```
+    "ProductID": 0xB35B
+    ```
+    
+    <img width="879" alt="Zrzut ekranu 2022-11-21 o 19 56 30" src="https://user-images.githubusercontent.com/1679514/203136999-95fcac9c-e8a9-425e-9ca4-31405eb8eb2e.png">
 
 
 
-## Setup launchctl
-
-Add service to launchctl and start it 
-```
-launchctl load ~/Library/LaunchAgents/local.hidutilKeyMapping.plist; launchctl start local.hidutilKeyMapping
-```
+* Update ProductID in MxKeysBindings.sh file. 
 
 
-Reboot proof solution is done.
+* Copy file MxKeysBindings.sh to your Documents folder adn add executionpermission  - you can use any folder you like. 
+
+    ```
+    cp MxKeysBindings.sh ~/Documents/; chmod a+x ~/Documents/MxKeysBindings.sh
+    ```
 
 
-# Alternative launching option
+* Install crontab entry ```crontab -e```
 
-Launchctl seems to be changing from release to release of MacOS and it stopped working for ventura. 
-
-https://stackoverflow.com/questions/6442364/running-script-upon-login-in-mac-os-x
-
+    ```
+    * * * * * cd /Users/[USER_HOME_DIR]/Documents && ./MxKeysBindings.sh
+    ```
 
 # Remap of END HOME keys for MX Master
 
-
+Copy and paste following content
 ```
 cd ~/Library; mkdir KeyBindings; cd KeyBindings; vi DefaultKeyBinding.dict
 ```
 
-Copy and paste following content
-```
-$ cd ~/Library
-$ mkdir KeyBindings
-$ cd KeyBindings
-$ vi DefaultKeyBinding.dict
 
-```
-
-Copy and paste following configuration
+Paste following configuration
 
 ```
 {
@@ -96,6 +62,3 @@ Copy and paste following configuration
 "$^\UF72B" = "moveToEndOfDocumentAndModifySelection:"; /* Shift + Ctrl + End */
 }
 ```
-
-
-

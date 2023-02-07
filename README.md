@@ -21,6 +21,7 @@ This is extreemly usefull when Logitech Flow is enabled. See https://github.com/
     
     <img width="879" alt="Zrzut ekranu 2022-11-21 o 19 56 30" src="https://user-images.githubusercontent.com/1679514/203136999-95fcac9c-e8a9-425e-9ca4-31405eb8eb2e.png">
 
+In case it's conencted via Logi Unifying receiver you can find coresponding ProductID in USB secton.
 
 
 * Update ProductID in MxKeysBindings.sh file. 
